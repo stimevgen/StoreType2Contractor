@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Main-Class: com.stimevgen.storetype2contractor.StoreType2Contractor
+
