@@ -6,15 +6,17 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="164.0" prefWidth="420.0" style="-fx-border-color: green; -fx-border-width: 1px 1px 1px 1px;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.stimevgen.storetype2contractor.controller.EditFormController">
+<AnchorPane prefHeight="187.0" prefWidth="420.0" style="-fx-border-color: green; -fx-border-width: 1px 1px 1px 1px;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.stimevgen.storetype2contractor.controller.EditFormController">
    <children>
-      <Button layoutX="342.0" layoutY="128.0" mnemonicParsing="false" onMouseClicked="#onWrite" text="Записать" />
-      <Button layoutX="385.0" layoutY="85.0" mnemonicParsing="false" onMouseClicked="#getGUID" text="..." />
-      <TextField fx:id="uid" layoutX="116.0" layoutY="85.0" prefHeight="25.0" prefWidth="269.0" />
-      <ComboBox fx:id="typeContractor" layoutX="115.0" layoutY="50.0" prefHeight="25.0" prefWidth="292.0" />
+      <Button layoutX="342.0" layoutY="152.0" mnemonicParsing="false" onMouseClicked="#onWrite" text="Записать" />
+      <Button layoutX="385.0" layoutY="109.0" mnemonicParsing="false" onMouseClicked="#getGUID" text="..." />
+      <TextField fx:id="uid" layoutX="116.0" layoutY="109.0" prefHeight="25.0" prefWidth="269.0" />
+      <ComboBox fx:id="typeContractor" layoutX="115.0" layoutY="74.0" prefHeight="25.0" prefWidth="292.0" />
       <ComboBox fx:id="contractor" layoutX="115.0" layoutY="14.0" prefHeight="25.0" prefWidth="292.0" />
       <Label layoutX="14.0" layoutY="18.0" text="Подразделение:" />
-      <Label layoutX="14.0" layoutY="54.0" prefHeight="17.0" prefWidth="83.0" text="Тип подраз-я:" />
-      <Label layoutX="14.0" layoutY="89.0" text="Код подраз-я:" />
+      <Label layoutX="14.0" layoutY="78.0" prefHeight="17.0" prefWidth="83.0" text="Тип подраз-я:" />
+      <Label layoutX="14.0" layoutY="113.0" text="Код подраз-я:" />
+      <ComboBox fx:id="store" layoutX="116.0" layoutY="44.0" prefHeight="25.0" prefWidth="292.0" />
+      <Label layoutX="14.0" layoutY="48.0" prefHeight="17.0" prefWidth="89.0" text="Склад:" />
    </children>
 </AnchorPane>

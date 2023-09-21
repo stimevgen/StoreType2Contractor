@@ -37,6 +37,8 @@ public class ApplicationController {
     @FXML
     public TableColumn<com.stimevgen.storetype2contractor.model.StoreType2Contractor, String> Cll_ShortName;
     @FXML
+    public TableColumn<com.stimevgen.storetype2contractor.model.StoreType2Contractor, String> Skd_ShortName;
+    @FXML
     public TableColumn<com.stimevgen.storetype2contractor.model.StoreType2Contractor, String> ID_STORE_TYPE;
     @FXML
     public TableColumn<com.stimevgen.storetype2contractor.model.StoreType2Contractor, String> ID_STORE_EXTERNAL;
@@ -59,6 +61,7 @@ public class ApplicationController {
         Cll_ShortName.setCellValueFactory(cell -> cell.getValue().cll_ShortNameProperty());
         ID_STORE_TYPE.setCellValueFactory(cell -> cell.getValue().ID_STORE_TYPEProperty());
         ID_STORE_EXTERNAL.setCellValueFactory(cell -> cell.getValue().ID_STORE_EXTERNALProperty());
+        Skd_ShortName.setCellValueFactory(cell -> cell.getValue().skd_ShortNameProperty());
     }
 
     private void loadIconFromButtonToolbar() {
@@ -102,7 +105,7 @@ public class ApplicationController {
 
     public void updateView(MouseEvent event) {
         tableS2C.getItems().clear();
-        tableS2C.setItems(connection.getData(null));
+        tableS2C.setItems(connection.getData(findData.getText()));
         tableS2C.requestFocus();
     }
 
@@ -134,6 +137,7 @@ public class ApplicationController {
             if (!selectionModel.isEmpty()) {
                 controllerEditBook.setId(selectionModel.getSelectedItem().ID_STORE_TYPE_2_CONTRACTORProperty().get());
                 controllerEditBook.setIdStore(selectionModel.getSelectedItem().getID_STORE());
+                controllerEditBook.setIdContractor(selectionModel.getSelectedItem().ID_CONTRACTORProperty().get());
                 controllerEditBook.uid.setText(selectionModel.getSelectedItem().ID_STORE_EXTERNALProperty().get());
                 controllerEditBook.typeContractor.setValue(selectionModel.getSelectedItem().ID_STORE_TYPEProperty().get());
             } else {

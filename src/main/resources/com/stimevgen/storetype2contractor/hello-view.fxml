@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="449.0" prefWidth="950" spacing="0.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.stimevgen.storetype2contractor.controller.ApplicationController">
+<VBox prefHeight="449.0" prefWidth="1064.0" spacing="0.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.stimevgen.storetype2contractor.controller.ApplicationController">
     <padding>
         <Insets bottom="0" left="0" right="0" top="0" />
     </padding>
@@ -56,11 +56,12 @@
             <Insets />
          </VBox.margin>
       </ToolBar>
-      <TableView fx:id="tableS2C" blendMode="MULTIPLY" cache="true" cacheHint="SPEED" editable="true" onKeyPressed="#pressedCopy" onMouseClicked="#onClicked" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
+      <TableView fx:id="tableS2C" blendMode="MULTIPLY" cache="true" cacheHint="SPEED" editable="true" onKeyPressed="#pressedCopy" onMouseClicked="#onClicked" prefWidth="1017.0" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
         <columns>
           <TableColumn fx:id="Cll_ShortName" maxWidth="1.7976931348623157E308" minWidth="325.0" prefWidth="-1.0" text="Наименование подразделения" />
+          <TableColumn fx:id="Skd_ShortName" maxWidth="1.7976931348623157E308" minWidth="335.0" prefWidth="-1.0" text="Склад" />
           <TableColumn fx:id="ID_STORE_TYPE" minWidth="150.0" prefWidth="0.0" resizable="false" text="Тип подраздления" />
-            <TableColumn fx:id="ID_STORE_EXTERNAL" minWidth="300.0" prefWidth="10.0" resizable="false" text="Код подраздления" />
+          <TableColumn fx:id="ID_STORE_EXTERNAL" minWidth="300.0" prefWidth="10.0" resizable="false" text="Код подраздления" />
         </columns>
          <VBox.margin>
             <Insets />

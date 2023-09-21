@@ -17,17 +17,24 @@ public class EditFormController {
     public TextField uid;
     public ComboBox<String> typeContractor;
     public ComboBox<Contractor> contractor;
+    public ComboBox<Contractor> store;
     private DataBase connection;
     private String id;
 
     public void setIdStore(String idStore) {
-        List<Contractor> t = contractor.getItems().stream().filter(contractor1 -> contractor1.getSkd_UniCode().equals(idStore)).toList();
-        contractor.setValue(t.get(0));
+        List<Contractor> contractorList = store.getItems().stream().filter(contractor1 -> contractor1.getSkd_UniCode().equals(idStore)).toList();
+        store.setValue(contractorList.get(0));
+    }
+
+    public void setIdContractor(String idContractor) {
+        List<Contractor> storeList = contractor.getItems().stream().filter(contractor1 -> contractor1.getCll_Unicode().equals(idContractor)).toList();
+        contractor.setValue(storeList.get(0));
     }
 
     public void setId(String id) {
         this.id = id;
     }
+
 
     public void setDataBase(DataBase dataBase) {
         connection = dataBase;
@@ -44,12 +51,14 @@ public class EditFormController {
         };
         contractor.setCellFactory(factory);
         contractor.setButtonCell(factory.call(null));
+        store.setCellFactory(factory);
+        store.setButtonCell(factory.call(null));
     }
 
     public void onWrite() {
         Stage stage = (Stage) uid.getScene().getWindow();
         try {
-            connection.addData(uid.getText(), typeContractor.getValue(), contractor.getValue().getSkd_UniCode(), contractor.getValue().getCll_Unicode());
+            connection.addData(uid.getText(), typeContractor.getValue(), store.getValue().getSkd_UniCode(), contractor.getValue().getCll_Unicode());
             if (id != null) {
                 if (!id.equals("")) {
                     connection.deleteData(id);
@@ -70,6 +79,7 @@ public class EditFormController {
     public void reload() {
         typeContractor.setItems(connection.getTypeContractor());
         contractor.setItems(connection.getContractor());
+        store.setItems(connection.getContractor());
     }
 
     private Boolean showMessage(String text, Alert.AlertType type) {

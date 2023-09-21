@@ -44,12 +44,14 @@ public class DataBase {
                     select\s
                     \tID_STORE_TYPE_2_CONTRACTOR,
                     \tc.Cll_ShortName,
+                    \tskd.Skd_ShortName AS SKD_ShortName,
                     \tID_STORE_TYPE,
                     \tID_STORE_EXTERNAL,
                     \ts2c.ID_CONTRACTOR,
                     \ts2c.ID_STORE
                     from [OL].[STORE_TYPE_2_CONTRACTOR] s2c
                     join cll c on c.Cll_UniCode = s2c.ID_CONTRACTOR
+                    join skd on skd.Skd_UniCode = s2c.ID_STORE
                     """+ filter + """                    
                     order by
                     \tID_CONTRACTOR""";
@@ -58,8 +60,10 @@ public class DataBase {
                 observableListValue.add(new StoreType2Contractor(resultSet.getString(2),
                         resultSet.getString(3),
                         resultSet.getString(4),
-                        resultSet.getString(6),
-                        resultSet.getString(1)));
+                        resultSet.getString(5),
+                        resultSet.getString(7),
+                        resultSet.getString(1),
+                        resultSet.getString(6)));
             }
             return observableListValue;
         } catch (SQLException e) {
